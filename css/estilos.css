@@ -1,0 +1,301 @@
+/* Estilos generales para el body */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+
+/* Selecciona el elemento footer y luego en este el elemento p y ajusta su tamaño y fuente */
+.footer p {
+    font-size: 10px; /* Tamaño de la fuente */    
+	text-align: center;
+	line-height: 40%; /* Ajusta la altura del salto de carro al 150% del tamaño de la fuente */
+}
+
+.contenido-item h3{
+	font-size: 30px; /* Tamaño de la fuente */    
+	text-align: center;
+	line-height: 150%; /* Ajusta la altura del salto de carro al 150% del tamaño de la fuente */
+}
+
+contenido-item p{	
+	font-size: 22px; /* Tamaño de la fuente */    
+	font-style: normal;
+	font-weigth: ligther;
+	text-align: center;
+	line-height: 150%; /* Ajusta la altura del salto de carro al 150% del tamaño de la fuente */
+}
+
+/* Selecciona el elemento contenido y luego en este el elemento p y ajusta su tamaño y fuente */
+.contenido p{
+    font-size: 26px; /* Tamaño de la fuente */    
+	text-align: center;
+	line-height: 150%; /* Ajusta la altura del salto de carro al 150% del tamaño de la fuente */
+}
+
+/* Estilos del barra de navegación */
+.navbar {
+  display: flex;  
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+  align-items: center;
+  justify-content: center; /* Centra los elementos horizontalmente */
+  height: auto; /* Cambiado a auto para permitir flexibilidad */
+  background-color: #A1DAF3; /* Fondo de color */
+  list-style: none; /* Quita las viñetas */
+  padding: 10px; /* Añadido padding para mejor espaciado */  
+  font-size: 1.3em;
+}
+
+/* Estilos para los elementos de la lista */
+.navbar li {    
+	display: inline-block !important; /* Asegura que el cursor funcione */
+}
+
+/* Selecciona el elemento navbar y luego en este el elemento a (los enlaces)*/
+.navbar a{
+    font-size: 15px; /* Tamaño de la fuente */    
+	text-align: center;
+	text-decoration: none; /* Quita el subrayado */
+    color: black; /* Color del texto */    
+    padding: 8px 35px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */	
+	line-height: 150%; /* Ajusta la altura del salto de carro al 150% del tamaño de la fuente */
+}
+
+/* Estilo para el enlace activo (página actual) */
+.navbar a.active {
+    color: red;
+    text-decoration: underline;
+	pointer-events: none; 	
+	/*La propiedad CSS pointer-events: none; impide que un elemento sea el objetivo de eventos del puntero, 
+	lo que incluye los eventos de hover y click.
+	Debido a esto, establecer la propiedad cursor en un elemento con pointer-events: none; directamente no tendrá efecto,
+	ya que el navegador ignora cualquier interacción del ratón con ese elemento.	
+	Para cambiar el cursor cuando pointer-events: none; está activo, puedes aplicar el cambio de cursor al elemento padre.*/	
+}
+
+/* Estilos para enlaces habilitados */
+.navbar a.enabled {
+    color: blue;    
+}
+
+/* Estilos para los enlaces deshabilitados */
+.navbar a.disabled {	
+	color: gray;
+	/*cursor: not-allowed; /* Cursor de prohibido Cambia el cursor para que no parezca clickeable */		
+	/*pointer-events: none; */
+}
+
+
+/* El hover no afecta a los elementos deshabilitados */
+.navbar a.disabled:hover {    
+	background-color: transparent;
+	cursor: not-allowed; /* Cursor de prohibido Cambia el cursor para que no parezca clickeable */		
+}
+
+/* Efecto al pasar el mouse */
+.navbar a.enabled:hover {
+    background-color: #78C0E0;
+    color: white;
+	cursor: pointer; /* Cursor de prohibido Cambia el cursor para que no parezca clickeable */			
+	cursor-color: green;
+}
+
+/* El hover no afecta a los elementos deshabilitados */
+.navbar a.active:hover {
+	display: inline-block !important; /* Asegura que el cursor funcione */
+    background-color: transparent; /* No cambia el fondo */
+    color: red; /* Mantiene el color gris */
+	cursor: default; /* Cursor de prohibido */	
+}
+
+/* Contenedor principal con Grid en deptos*/
+.contenido-depto {
+    display: grid; /* Activa CSS Grid */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+    grid-template-rows: repeat(2, auto); /* 2 filas, altura automática */
+    gap: 20px; /* Espacio entre elementos */
+    padding: 40px; /* Margen interno */
+    align-items: center; /* Alinea elementos verticalmente */
+    justify-content: center; /* Alinea elementos horizontalmente */
+}
+
+
+/*Estilos para la sección principal Inicio denominada contenido*/
+.contenido {
+	display: grid; /*Desplegar en forma de rejilla*/
+	grid-template-columns: 1fr 1fr 1fr; /* Tres columnas: imagen - texto - imagen , para que la del texto sea del doble de ancho queda 1fr 2fr 1fr*/
+	/*gap: 20px; /*Establece el espacio entre columnas*/
+	padding: 40px; /*Espacio de relleno de contenido alrededor de un elemento, digamos margen interno*/
+	aling-items: center; /*para alinear elementos de manera vertical*/	
+	justify-content: center; /*Centra los iconos horizontalmente*/
+}
+
+/*Ajustar el ancho de las tres columnas de contenido para que sea igual*/
+.contenido-col1, .contenido-col2, .contenido-col3{
+	flex: 1; /*Distribuye equitativamente el espacio en las columnas*/
+	padding: 1px;	
+	justify-content: center; /* Centra los elementos horizontalmente */
+	background-color: white; /*asigna el color de fondo a cada colmna del contenido*/
+	
+}
+
+
+/*Ajustar el ancho de las tres columnas de contenido para que sea igual*/
+.contenido-col1, .contenido-col3{
+	display: flex; /*Se debe actiuvar el flex para alinear los elementos en cada columna*/	
+	align-items: center;     /* Centra los iconos verticalmente */
+}
+
+/*Centrar contenido de columna 2*/
+.contenido-col2{
+	 text-align: center;
+ 
+}
+
+/* Estilos para las imágenes dentro del grid  en el contenido*/
+.contenido-item contenido-img {
+    max-width: 30%; /* Para que no desborde */
+    height: auto;
+    display: block; /* Para evitar espacios adicionales */
+    margin: auto; /* Centrar la imagen dentro de su div */
+	padding: 10px;
+}
+
+
+/* Estilos para las imágenes dentro del grid  en el contenido de depto*/
+.contenido-img {
+    max-width: 50%; /* Para que no desborde */
+    height: auto;
+    display: block; /* Para evitar espacios adicionales */
+    margin: auto; /* Centrar la imagen dentro de su div */
+	padding: 10px;
+}
+
+/*Estilos para la sección principal denominada footer*/
+.footer {
+	display: grid; /*Desplegar en forma de rejilla*/
+	grid-template-columns: 1fr 1fr 1fr; /* Tres columnas del mismo ancho*/
+	/*gap: 20px; /*Establece el espacio entre columnas*/
+	padding: 10px; /*Espacio de relleno de contenido alrededor de un elemento, digamos margen interno*/
+	aling-items: center; /*para alinear elementos de manera vertical*/
+	
+}
+
+/*Ajustar el ancho de las tres columnas de contenido para que sea igual*/
+.footer-col1, .footer-col2, .footer-col3{
+	flex: 1; /*Distribuye equitativamente el espacio en las columnas*/
+	padding: 1px;
+}
+
+/*Centrar contenido de columna 1 y columna 2 del footer*/
+.footer-col1 .footer-col2{
+	 text-align: center; /* Centra los elementos verticalmente */
+	 justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+/* Estilos para las imágenes dentro del grid  en el footer*/
+.logotipo {
+    max-width: 100%; /* Para que no desborde */
+    height: auto;
+    display: block; /* Para evitar espacios adicionales */
+    margin: auto; /* Centrar la imagen dentro de su div */
+}
+
+
+
+/*Ajustar el ancho de las tres columnas de contenido para que sea igual*/
+.footer-col1, .footer-col2, .footer-col3{
+	flex: 1; /*Distribuye equitativamente el espacio en las columnas*/
+	padding: 10px;
+	/*background-color: #A1DAF3; /*asigna el color de fondo a cada colmna del contenido*/
+}
+
+/*Centrar contenido de columna 2*/
+.contenido-col2{
+	 text-align: center;
+}
+
+/* Alinear iconos de redes sociales */
+.footer-col3 {
+    display: flex; /*hace que los elementos hijos se organicen como fila, esto convierte footer-col3 en un contenedor flexible, 
+	donde sus elementos hijos (.logo_red) se organizan en fila en lugar de columna
+	Por defecto, los <div> (en el html del sitio) se comportan como bloques y ocupan todo el ancho (se apilan en columna).*/
+    flex-direction: row;     /* Mantiene los iconos en fila */
+	justify-content: center; /*Centra los iconos horizontalmente*/
+    align-items: center;     /* Centra los iconos verticalmente */
+	gap: 10px; /* Espacio entre los iconos */
+    /*height: 100%;            /* Asegura que la columna tome toda la altura */
+}
+
+/* Estilos para las imágenes de redes sociales */
+.logo_red img {
+    max-width: 35px; /* Tamaño fijo de los iconos */
+    height: auto;
+    display: block;
+}
+
+
+/* Agrega un borde a cada columna dentro del contenido principal */
+.contenido> div {
+    border: 1px solid black;  /* Línea negra de 2px */
+    padding: 10px;  /* Espacio interno para que el contenido no pegue con el borde */
+}
+
+/* Agrega un borde a cada columna dentro del footer y le asigna el color de fondo*/
+.footer> div {
+    border: 1px solid black;  /* Línea negra de 2px */
+    padding: 10px;  /* Espacio interno para que el contenido no pegue con el borde */
+	background-color: #A1DAF3; /*asigna el color de fondo a cada colmna del contenido*/
+}
+
+/* Contenido Depto Diseño por defecto: 3 columnas (mayor a 1280px) */
+.contenido-depto, .contenido {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    grid-template-rows: 1;
+    gap: 20px;
+    padding: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Pantallas medianas (entre 640px y 1280px): 2 columnas */
+@media (max-width: 1280px) {
+    .contenido-depto {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    }
+}
+
+/* Pantallas pequeñas (menor a 640px): 1 columna */
+@media (max-width: 640px) {
+    .contenido-depto {
+        grid-template-columns: 1fr; /* 1 columna */
+    }
+}
+
+/* Contenido Inicio Diseño por defecto: 3 columnas (mayor a 1280px) */
+.contenido, .footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas  en una fila*/
+    /*grid-template-rows: 1;*/
+    gap: 20px;
+    padding: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Pantallas medianas (entre 640px y 1280px): 2 columnas */
+@media (max-width: 1280px) {
+    .contenido, .footer {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    }
+}
+
+/* Pantallas pequeñas (menor a 640px): 1 columna */
+@media (max-width: 640px) {
+    .contenido, .footer {
+        grid-template-columns: 1fr; /* 1 columna */
+    }
+}
+
