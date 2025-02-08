@@ -250,6 +250,7 @@ contenido-item p{
 }
 
 /* Contenido Depto Diseño por defecto: 3 columnas (mayor a 1280px) */
+@media (min-width: 1280px) {
 .contenido-depto, .contenido {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columnas */
@@ -258,6 +259,7 @@ contenido-item p{
     padding: 40px;
     align-items: center;
     justify-content: center;
+}
 }
 
 /* Pantallas medianas (entre 640px y 1280px): 2 columnas */
@@ -275,6 +277,7 @@ contenido-item p{
 }
 
 /* Contenido Inicio Diseño por defecto: 3 columnas (mayor a 1280px) */
+@media (min-width: 1280px) {
 .contenido, .footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columnas  en una fila*/
@@ -283,6 +286,7 @@ contenido-item p{
     padding: 40px;
     align-items: center;
     justify-content: center;
+}
 }
 
 /* Pantallas medianas (entre 640px y 1280px): 2 columnas */
@@ -298,4 +302,6 @@ contenido-item p{
         grid-template-columns: 1fr; /* 1 columna */
     }
 }
+
+
 
